@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1(style='margin-bottom: 20px;') Add New Music
+    form(method="POST" action="/" style='max-width: 300px;')
+        div(style='margin-bottom: 10px;')
+            label(for="title" style='display: block; margin-bottom: 5px;') Title:
+            input(type="text" id="title" name="title" style='width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;')
+
+        div(style='margin-bottom: 10px;')
+            label(for="artist" style='display: block; margin-bottom: 5px;') Artist:
+            input(type="text" id="artist" name="artist" style='width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;')
+
+        div(style='margin-bottom: 10px;')
+            label(for="genre" style='display: block; margin-bottom: 5px;') Genre:
+            input(type="text" id="genre" name="genre" style='width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;')
+
+        div(style='margin-bottom: 10px;')
+            label(for="releaseDate" style='display: block; margin-bottom: 5px;') Release Date:
+            input(type="date" id="releaseDate" name="releaseDate" style='width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px')
+
+        button(type="submit" style='width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;')
+            | Submit

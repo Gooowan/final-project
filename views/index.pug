@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1(style='margin-bottom: 20px;') Music Library
+    ul(style='list-style: none; padding: 0;')
+        each music in musicList
+            li(style='margin-bottom: 10px;')
+                a(href=`/${music.id}` style='font-size: 18px;') #{music.title} by #{music.artist}
+    a(href="/new" style='display: inline-block; margin-top: 20px; padding: 10px 15px; background-color: #007BFF; color: white; text-align: center; border-radius: 5px;') Add New Music
