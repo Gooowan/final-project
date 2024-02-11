@@ -21,6 +21,28 @@ exports.create = async (req, res) => {
     res.redirect('/');
 };
 
+exports.updatePatch = async (req, res) => {
+    const { id } = req.params;
+    const update = req.body;
+    const music = await Music.findByIdAndUpdate(id, update, { new: true });
+    if (!music) {
+        return res.status(404).send('Music not found');
+    }
+    res.redirect(`/${music.id}`);
+};
+
+exports.replace = async (req, res) => {
+    const { id } = req.params;
+    await Music.replaceOne({ _id: id }, req.body);
+    res.redirect(`/${id}`);
+};
+
+exports.delete = async (req, res) => {
+    await Music.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+
+}
+
 exports.setHeader = (req, res) => {
     res.set({
         'Content-Type': 'text/plain',

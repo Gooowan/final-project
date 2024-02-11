@@ -20,8 +20,8 @@ app.set('views', ['views', 'views/users']);
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', musicRoutes);
-// app.use('/users', user)
+// app.use('/', musicRoutes);
+app.use('/users', user)
 
 
 
